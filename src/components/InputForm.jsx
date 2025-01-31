@@ -1,33 +1,51 @@
 import React from "react";
-import { useState } from "react";
 
-function WishInput({ onNewWish }) {
-  const [newWish, setNewWish] = useState("");
-
-  const handleKeyUp = (e) => {
-    if (e.key == "Enter" && newWish !== "") {
-      const newWishObj = {
-        id: Date.now(),
-        text: newWish,
-        completed: false,
-      };
-      onNewWish(newWishObj);
-      setNewWish("");
-    }
-  };
-
+const InputForm = ({
+  initialInvestment,
+  handleInitialInvestment,
+  duration,
+  handleDuration,
+  expectedReturn,
+  handleExpectedReturn,
+  annualInvestment,
+  handleAnnualInvestment,
+}) => {
   return (
-    <fieldset className="wish-input">
-      <legend>New Wish:</legend>
-      <input
-        type="text"
-        placeholder="My new wish"
-        value={newWish}
-        onChange={(e) => setNewWish(e.target.value)}
-        onKeyUp={handleKeyUp}
-      />
-    </fieldset>
+    <form>
+      <div>
+        <label>Initial Investment:</label>
+        <input
+          type="number"
+          value={initialInvestment}
+          onChange={(e) => handleInitialInvestment(e.target.value)}
+        />
+      </div>
+      <div>
+        <label>Duration:</label>
+        <input
+          type="number"
+          value={duration}
+          onChange={(e) => handleDuration(e.target.value)}
+        />
+      </div>
+      <div>
+        <label>Expected Return:</label>
+        <input
+          type="number"
+          value={expectedReturn}
+          onChange={(e) => handleExpectedReturn(e.target.value)}
+        />
+      </div>
+      <div>
+        <label>Annual Investment:</label>
+        <input
+          type="number"
+          value={annualInvestment}
+          onChange={(e) => handleAnnualInvestment(e.target.value)}
+        />
+      </div>
+    </form>
   );
-}
+};
 
-export default WishInput;
+export default InputForm;

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Header from "./components/Header";
+import InputForm from "./components/InputForm";
 function App() {
   const [annualInvestment, setAnnualInvestment] = useState(0);
   const [expectedReturn, setExpectedReturn] = useState(0);
@@ -7,40 +8,34 @@ function App() {
   const [initialInvestment, setInitialInvestment] = useState(0);
 
   const handleAnnualInvestment = (newAnnualInvestment) => {
-    setAnnualInvestment((currentAnnualInvestment) => [
-      ...currentAnnualInvestment,
-      newAnnualInvestment,
-    ]);
+    setAnnualInvestment(newAnnualInvestment); // Eliminado el intento de esparcir un número en un array
   };
 
   const handleExpectedReturn = (newExpectedReturn) => {
-    setExpectedReturn((currentExpectedReturn) => [
-      ...currentExpectedReturn,
-      newExpectedReturn,
-    ]);
+    setExpectedReturn(newExpectedReturn);
   };
 
   const handleDuration = (newDuration) => {
-    setDuration((currentDuration) => [...currentDuration, newDuration]);
+    setDuration(newDuration);
   };
 
   const handleInitialInvestment = (newInitialInvestment) => {
-    setInitialInvestment((currentInitialInvestment) => [
-      ...currentInitialInvestment,
-      newInitialInvestment,
-    ]);
+    setInitialInvestment(newInitialInvestment);
   };
 
   return (
     <div>
       <Header />
       <InputForm
+        initialInvestment={initialInvestment}
         handleInitialInvestment={handleInitialInvestment}
+        duration={duration}
         handleDuration={handleDuration}
+        expectedReturn={expectedReturn}
         handleExpectedReturn={handleExpectedReturn}
+        annualInvestment={annualInvestment}
         handleAnnualInvestment={handleAnnualInvestment}
       />
-      <OutputList />
     </div>
   );
 }
