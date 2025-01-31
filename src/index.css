@@ -31,7 +31,7 @@ body {
   font-size: 1.5rem;
 }
 
-#user-input {
+#userinput {
   padding: 1rem;
   max-width: 30rem;
   margin: 2rem auto;
@@ -45,7 +45,7 @@ body {
   gap: 1.5rem;
 }
 
-#user-input label {
+#userinput label {
   display: block;
   margin-bottom: 0.25rem;
   font-family: 'Roboto Condensed', sans-serif;
@@ -54,7 +54,7 @@ body {
   text-transform: uppercase;
 }
 
-#user-input input {
+#userinput input {
   width: 100%;
   padding: 0.5rem;
   border: 1px solid #76c0ae;

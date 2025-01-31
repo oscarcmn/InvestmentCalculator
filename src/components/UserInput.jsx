@@ -1,6 +1,6 @@
 import React from "react";
 
-const InputForm = ({
+const UserInput = ({
   initialInvestment,
   handleInitialInvestment,
   duration,
@@ -48,4 +48,4 @@ const InputForm = ({
   );
 };
 
-export default InputForm;
+export default UserInput;

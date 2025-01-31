@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Header from "./components/Header";
-import InputForm from "./components/InputForm";
+import UserInput from "./components/UserInput";
+import "./index.css";
+
 function App() {
   const [annualInvestment, setAnnualInvestment] = useState(0);
   const [expectedReturn, setExpectedReturn] = useState(0);
@@ -26,7 +28,7 @@ function App() {
   return (
     <div>
       <Header />
-      <InputForm
+      <UserInput
         initialInvestment={initialInvestment}
         handleInitialInvestment={handleInitialInvestment}
         duration={duration}
