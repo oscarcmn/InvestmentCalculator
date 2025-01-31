@@ -28,3 +28,5 @@ function Result(duration, initialInvestment, annualInvestment, expectedReturn) {
     </table>
   );
 }
+
+export default Result;
