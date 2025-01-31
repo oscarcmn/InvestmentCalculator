@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "./components/Header";
 import UserInput from "./components/UserInput";
+import Result from "./components/Result";
 import "./index.css";
 
 function App() {
@@ -37,6 +38,12 @@ function App() {
         handleExpectedReturn={handleExpectedReturn}
         annualInvestment={annualInvestment}
         handleAnnualInvestment={handleAnnualInvestment}
+      />
+      <Result
+        initialInvestment={initialInvestment}
+        duration={duration}
+        expectedReturn={expectedReturn}
+        annualInvestment={annualInvestment}
       />
     </div>
   );
