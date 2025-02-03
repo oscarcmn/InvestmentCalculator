@@ -1,30 +1,39 @@
-import { useEffect } from "react";
 import React from "react";
 import { calculateInvestmentResults } from "../util/investment";
 
-function Result(duration, initialInvestment, annualInvestment, expectedReturn) {
+function Result({
+  duration,
+  initialInvestment,
+  annualInvestment,
+  expectedReturn,
+}) {
   const investmentResults = calculateInvestmentResults(
-    duration,
     initialInvestment,
     annualInvestment,
-    expectedReturn
+    expectedReturn,
+    duration
   );
+  console.log(investmentResults);
   return (
     <table>
-      <tr>
-        <th>year</th>
-        <th>investment value</th>
-        <th>interest (year)</th>
-        <th>total interest</th>
-        <th>invested capital</th>
-      </tr>
-      <tr>
-        <th>1</th>
-        <th>100</th>
-        <th>600</th>
-        <th>45613</th>
-        <th>87</th>
-      </tr>
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Interest Earned</th>
+          <th>Value at Year End</th>
+          <th>Annual Investment</th>
+        </tr>
+      </thead>
+      <tbody>
+        {investmentResults.map((result) => (
+          <tr key={result.year}>
+            <td>{result.year}</td>
+            <td>{result.interest}</td>
+            <td>{result.valueEndOfYear}</td>
+            <td>{result.annualInvestment}</td>
+          </tr>
+        ))}
+      </tbody>
     </table>
   );
 }

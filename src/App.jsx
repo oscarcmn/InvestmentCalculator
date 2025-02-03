@@ -5,13 +5,13 @@ import Result from "./components/Result";
 import "./index.css";
 
 function App() {
-  const [annualInvestment, setAnnualInvestment] = useState(0);
-  const [expectedReturn, setExpectedReturn] = useState(0);
-  const [duration, setDuration] = useState(0);
-  const [initialInvestment, setInitialInvestment] = useState(0);
+  const [annualInvestment, setAnnualInvestment] = useState(1200);
+  const [expectedReturn, setExpectedReturn] = useState(6);
+  const [duration, setDuration] = useState(10);
+  const [initialInvestment, setInitialInvestment] = useState(10000);
 
   const handleAnnualInvestment = (newAnnualInvestment) => {
-    setAnnualInvestment(newAnnualInvestment); // Eliminado el intento de esparcir un número en un array
+    setAnnualInvestment(newAnnualInvestment);
   };
 
   const handleExpectedReturn = (newExpectedReturn) => {
