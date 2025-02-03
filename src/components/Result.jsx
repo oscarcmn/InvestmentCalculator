@@ -22,8 +22,7 @@ function Result({
           <th>Year</th>
           <th>Investment value</th>
           <th>Interest (year)</th>
-          <th>Total Interest</th>
-          <th>Invested capital</th>
+          <th>Annual Investment</th>
         </tr>
       </thead>
       <tbody>
@@ -32,8 +31,7 @@ function Result({
             <td>{result.year}</td>
             <td>{result.valueEndOfYear.toFixed(0)}</td>
             <td>{result.interest.toFixed(0)}</td>
-            <td>{result.interest}</td>
-            <td>{(total + result.interest).toFixed(0)}</td>
+            <td>{result.annualInvestment.toFixed(0)}</td>
           </tr>
         ))}
       </tbody>
