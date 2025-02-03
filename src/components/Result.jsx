@@ -13,6 +13,8 @@ function Result({
     expectedReturn,
     duration
   );
+  const total = initialInvestment + annualInvestment;
+  let rest = 0;
   return (
     <table>
       <thead>
@@ -31,7 +33,7 @@ function Result({
             <td>{result.valueEndOfYear.toFixed(0)}</td>
             <td>{result.interest.toFixed(0)}</td>
             <td>{result.interest}</td>
-            <td>{initialInvestment + annualInvestment}</td>
+            <td>{(total + result.interest).toFixed(0)}</td>
           </tr>
         ))}
       </tbody>
